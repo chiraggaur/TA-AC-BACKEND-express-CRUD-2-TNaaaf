@@ -6,6 +6,7 @@ router.get("/", function (req, res, next) {
   data = req.body;
   res.render("index", { title: data });
 });
+
 router.get("/details", function (req, res, next) {
   data = req.body;
   res.render("details", { title: data });
