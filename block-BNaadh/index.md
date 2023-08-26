@@ -10,7 +10,7 @@ Q. write express generator command with varying options to generate express app 
 
 - express app with gitignore = express --git dir
 
-- express app with sass support for styling. = express --css=sass dir
+- express app with sass support for styling. = express --css sass dir
 
 - ejs as template engine and sass for styling = express --view=ejs --css=sass dir
 
