@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header_container">
+      <div class="home_link">
+        <h1><a href="/home" style="text-decoration: none"> Home </a></h1>
+      </div>
+      <div class="article_link">
+        <a href="/articles/add">
+          <button id="article_Button">Add Article</button>
+        </a>
+      </div>
+    </header>
+
+    <form action="/articles/<%= Article.id %>/updated" method="POST">
+      <div class="form_Container">
+        <h2 style="font-size: 25px">Article Form</h2>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          class="input_form_input"
+          value="<%= Article.title %>"
+        />
+        <input
+          type="text"
+          name="description"
+          placeholder="description"
+          class="input_form_input"
+          value="<%= Article.description %>"
+        />
+        <input
+          type="text"
+          name="tags"
+          placeholder="tags"
+          class="input_form_input"
+          value="<%= Article.tags %>"
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="author"
+          class="input_form_input"
+          value="<%= Article.author %>"
+        />
+        <input
+          type="text"
+          name="likes"
+          placeholder="likes"
+          class="input_form_input"
+          value="<%= Article.likes %>"
+        />
+        <button id="form_Update">Update</button>
+      </div>
+    </form>
+  </body>
+</html>
