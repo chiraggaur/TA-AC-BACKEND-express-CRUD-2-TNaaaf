@@ -1,7 +1,7 @@
 let express = require("express");
 let Routes = express.Router();
 let Article = require("../models/Article");
-// let Comment = require("../models/Comments");
+let Comment = require("../models/Comment");
 
 // all routes now declared with (Routes.)
 
@@ -74,12 +74,12 @@ Routes.get("/:id/likes", async (req, res) => {
 });
 
 // post comment
-// Routes.post("/<%= Article.id %>/comment", (req, res) => {
-// let id = req.params.id;
-// req.body.article_Id = id;
-// console.log(req.body);
-// Comment.create(req.body);
-// res.redirect("/articles/" + id);
-// });
+Routes.post("/:article_Id/comment", (req, res) => {
+  let article_Id = req.params.article_Id;
+  req.body.article_Id = article_Id;
+  Comment.create(req.body);
+  Article.findByIdAndUpdate(article_Id, { $push: { comments: [Comment._id] } });
+  res.redirect("/articles/" + article_Id);
+});
 
 module.exports = Routes;

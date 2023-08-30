@@ -1,6 +1,6 @@
 let express = require("express");
 let Routes = express.Router();
-let Comment = require("../models/Comments");
+let Comment = require("../models/Comment");
 let Article = require("../models/Article");
 
 // routes all the methods below for Comment collection
