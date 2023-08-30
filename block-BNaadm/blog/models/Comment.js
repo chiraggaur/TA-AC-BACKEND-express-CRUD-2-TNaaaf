@@ -5,9 +5,6 @@ let commentsSchema = new Schema(
   {
     content: { type: String },
     article_Id: { type: Schema.Types.ObjectId, ref: "Article", required: true },
-    title: { type: String },
-    description: { type: String },
-    tags: [String],
     author: { type: String },
     likes: { type: Number, default: 0 },
   },

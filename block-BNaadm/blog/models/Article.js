@@ -7,8 +7,14 @@ let articlesSchema = new Schema({
   tags: [String],
   author: { type: String },
   likes: { type: Number, default: 0 },
+  comments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Comment",
+    },
+  ],
 });
 
-let Article = mongoose.model("Article", articlesSchema); // same as collection name
+let Article = mongoose.model("Article", articlesSchema); // behave same as collection name
 
 module.exports = Article;
