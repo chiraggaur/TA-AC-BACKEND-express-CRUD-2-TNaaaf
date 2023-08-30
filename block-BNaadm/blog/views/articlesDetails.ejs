@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header_container">
+      <div class="home_link">
+        <h1><a href="/home" style="text-decoration: none"> Home </a></h1>
+      </div>
+      <div class="article_link">
+        <a href="/articles/add">
+          <button id="article_Button">Add Article</button>
+        </a>
+      </div>
+    </header>
+    <div class="article_DetailsContainer">
+      <h2>
+        <span style="color: blue; margin-right: 20px"> Title </span><%=
+        Article.title %>
+      </h2>
+      <p>
+        <span style="color: blue; margin-right: 20px"> Description </span><%=
+        Article.description %>
+      </p>
+      <p>
+        <span style="color: blue; margin-right: 20px"> Tags </span><%=
+        Article.tags %>
+      </p>
+      <p>
+        <span style="color: blue; margin-right: 20px"> Author </span><%=
+        Article.author %>
+      </p>
+      <p>
+        <span style="color: blue; margin-right: 20px"> Likes </span><%=
+        Article.likes %>
+      </p>
+      <div class="article_changes">
+        <button class="article_buttons">
+          <a href="/articles/<%= Article.id %>/edit">Edit</a>
+        </button>
+        <button class="article_buttons">
+          <a href="/articles/<%= Article.id %>/delete">Delete</a>
+        </button>
+        <button class="article_buttons">
+          <a href="/articles/<%= Article.id %>/likes">Likes</a>
+        </button>
+      </div>
+    </div>
+    <div class="Comments_Box">
+      <form action="/comments/<%= Article.id %>" method="POST">
+        <textarea
+          name="content"
+          cols="30"
+          rows="10"
+          placeholder="Type you comments here!"
+        ></textarea>
+        <!-- <div class="comment_Button">
+          <button style="width: 100px; height: 30px">Comments</button>
+        </div> -->
+        <input type="submit" placeholder="Comment" />
+      </form>
+    </div>
+  </body>
+</html>

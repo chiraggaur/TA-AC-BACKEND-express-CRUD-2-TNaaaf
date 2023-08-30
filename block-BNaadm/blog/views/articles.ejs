@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header_container">
+      <div class="home_link">
+        <h1><a href="/home" style="text-decoration: none"> Home </a></h1>
+      </div>
+      <div class="article_link">
+        <a href="/articles/add">
+          <button id="article_Button">Add Article</button>
+        </a>
+      </div>
+    </header>
+    <ul>
+      <h2
+        style="
+          text-align: center;
+          font-size: 30px;
+          color: blue;
+          margin-top: 100px;
+          /* border: 2px solid black; */
+        "
+      >
+        Articles
+      </h2>
+      <% Article.forEach((art)=>{ %>
+
+      <li class="article_Titles">
+        <a href="/articles/<%= art.id %>" style="text-decoration: none">
+          <%= art.title %>
+        </a>
+      </li>
+
+      <% }) %>
+    </ul>
+  </body>
+</html>
